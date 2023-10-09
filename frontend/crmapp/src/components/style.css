@@ -1,0 +1,254 @@
+/* src/styles.css */
+
+
+
+body {
+
+            font-family: 'Arial', sans-serif;
+
+            background-color: #FF99CC;
+
+            margin: 0;
+
+            padding: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh;
+
+        }
+
+
+
+.container {
+
+    width: 600px;
+
+    margin: 20px;
+
+    padding: 20px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    background-color: #fff;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    animation: fadeIn 0.5s ease-in-out;
+
+}
+
+
+
+.heading {
+
+    color: #333;
+
+    border-bottom: 2px solid #333;
+
+    padding-bottom: 10px;
+
+}
+
+
+
+.input {
+
+    padding: 8px;
+
+    margin-left: 10px;
+
+    font-size: 16px;
+
+}
+
+
+
+.customerList {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+
+
+.customerItem {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.productList {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin-left: 20px;
+
+}
+
+
+
+.productItem {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.hr {
+
+    border: 0;
+
+    height: 1px;
+
+    background: #ccc;
+
+    margin: 20px 0;
+
+}
+
+
+
+/* Animation */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+.productTypeFilter {
+
+    color: #007bff;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease-in-out;
+
+}
+
+
+
+.productTypeFilter:hover {
+
+    color: #0056b3;
+
+
+}
+
+.productTypeFilter {
+
+            color: #007bff;
+
+            cursor: pointer;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: inline-block;
+
+        }
+
+
+
+.productTypeFilter::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(45deg, #f7d1ff, #ffe8cc, #d1f7ff);
+
+    opacity: 0;
+
+    transform: scale(2);
+
+    transition: transform 0.5s, opacity 0.5s;
+
+}
+
+
+
+.productTypeFilter:hover::before {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+.productTypeFilter.clicked::before {
+
+    content: ''; /* Clear the content to remove sparkle effect when clicked */
+
+    opacity: 0;
+
+    transform: scale(1);
+
+    box-shadow: none;
+
+}
+
+
+
+.productTypeFilter.clicked {
+
+    position: relative;
+
+}
+
+
+
+.productTypeFilter.clicked::after {
+
+    content: '\1F50D'; /* Magnifying glass Unicode character */
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    font-size: 20px;
+
+    transform: translate(-50%, -50%);
+
+}
